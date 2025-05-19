@@ -1,0 +1,29 @@
+:root {
+  --color-headings: #2b2d42;
+  --color-text: #edf2f4;
+  --color-body: #8d99ae;
+  --color-footer: #ef233c;
+  --color-hover: #d90429;
+  --heading-font-size: 3em;
+  --border-radius: 10px;
+  --border-color: grey;
+}
+
+#main_header {
+  background-color: var(--color-headings);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5px;
+  margin: 10px;
+}
+
+.generator_header {
+  color: var(--color-text);
+}
+
+.nav_para {
+  color: var(--color-text);
+  text-decoration: none;
+}

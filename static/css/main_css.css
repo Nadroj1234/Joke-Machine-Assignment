@@ -128,3 +128,14 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+.card_buttob_div {
+  display: flex;
+}
+
+.card_button {
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-text);
+  background-color: rgb(71, 195, 253);
+}
