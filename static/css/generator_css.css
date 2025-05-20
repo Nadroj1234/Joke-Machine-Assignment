@@ -19,11 +19,37 @@
   margin: 10px;
 }
 
+.spacer {
+  color: var(--color-headings);
+}
+
 .generator_header {
   color: var(--color-text);
 }
 
-.nav_para {
-  color: var(--color-text);
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
+.page_link {
   text-decoration: none;
+  color: var(--color-text);
+}
+
+.header_para {
+  padding: 2px;
+}
+
+.page_link:hover {
+  color: var(--color-hover);
+}
+
+/* Main */
+#main_content {
+  background-color: var(--color-body);
+  padding: 5px;
+  margin: 10px;
+  color: var(--color-text);
 }

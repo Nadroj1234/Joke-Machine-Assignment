@@ -47,6 +47,8 @@
   color: var(--color-hover);
 }
 
+h1
+
 /* Main */
 #main_content {
   background-color: var(--color-body);

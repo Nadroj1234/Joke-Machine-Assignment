@@ -3,20 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/css/generator_css.css" />
+    <link rel="stylesheet" href="/static/css/main_css.css" />
+
     <title>Joke Generator</title>
   </head>
   <body>
     <header id="main_header">
       <h1 class="generator_header">This is the Joke Generator</h1>
       <div class="nav">
-        <p class="nav_para"><a class="page_link" href="/">Back to Home</a></p>
+        <p class="nav_para"><a class="page_link" href="/">Home</a></p>
+        <p class="spacer">''''''</p>
+
         <p class="nav_para">
-          <a class="page_link" href="/joke_search">Search a Joke</a>
+          <a class="page_link" href="/joke_search">Search</a>
         </p>
       </div>
     </header>
-    <main>
+    <main id="main_content">
       <label for="mood">Select Your Mood Right Now</label>
       <form action="/joke_generator" method="post">
         <select name="mood" id="mood" required>

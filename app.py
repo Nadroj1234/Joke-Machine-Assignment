@@ -20,7 +20,6 @@ def joke_generator():
         api_url = 'https://icanhazdadjoke.com/'
         headers = {'Accept': 'application/json'}
         response = requests.get(api_url, headers=headers)
-        print(response.status_code)
 
         if response.status_code == 200:
             joke = response.json().get("joke")
@@ -31,21 +30,30 @@ def joke_generator():
     return render_template('joke_generator.html', mood=mood, error=error, moods=moods, joke=joke)
 
 
-@app.route('/joke_search')
+@app.route('/joke_search', methods=['GET', 'POST'])
 def joke_search():
     error = None
-    joke = []
+    results = {}
+    term = ''
+
     if request.method == 'POST':
-        joke = request.form.get('joke').lower()
-        api_url = f'https://icanhaz/dadjoke.com/search '
-        response = requests.get(api_url)
+        headers = {'Accept': 'application/json'}
+        api_url = 'https://icanhazdadjoke.com/search'
+        response = requests.get(api_url, headers=headers)
 
-        if response.status_code == 200 and response.json().get('status') == 'success':
-            joke = response.json()['message']
+        if response.status_code == 200:
+            print(response.json())
+            results = response.json().get("results")
+            term = request.form.get('term').lower()
+
+            for joke in results:
+                for i in joke:
+                    i = results[i].get('joke')
+
         else:
-            error = f"Could not find breed '{joke}'. Try Another!"
+            error = f"Could not find joke '{results}'. Try Another!"
 
-    return render_template('joke_search.html', joke=joke, error=error)
+    return render_template('joke_search.html', results=results, error=error, term=term, i=i)
 
 
 if __name__ == '__main__':
