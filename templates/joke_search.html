@@ -30,7 +30,9 @@
       <p>{{i}}</p>
       {% if error %}
       <p style="color: red">{{error}}</p>
-      {% endif %}
+      {% endif %} {% for joke in results %}
+      <p>{{joke['joke']}}</p>
+      {% endfor %}
     </main>
   </body>
 </html>

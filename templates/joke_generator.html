@@ -31,6 +31,14 @@
       </form>
       {% if error %}
       <p style="color: red">{{error}}</p>
+      {% endif %} {% if 'happy' in mood %}
+      <p>I hope you stay happy after this joke!</p>
+      {% endif %} {% if 'sad' in mood %}
+      <p>I hope you are not sad after this joke!</p>
+      {% endif %} {% if 'angry' in mood %}
+      <p>You shouldn't be angry anymore!</p>
+      {% endif %} {% if 'excited' in mood %}
+      <p>You should be even more excited for the dad joke!</p>
       {% endif %} {% if joke %}
       <p>{{joke}}</p>
       {% endif %}

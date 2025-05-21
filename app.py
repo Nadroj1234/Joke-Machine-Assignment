@@ -14,7 +14,7 @@ def joke_generator():
     joke = None
     error = None
     mood = ''
-    moods = ['funny', 'sad', 'angry', 'excited', 'happy']
+    moods = ['sad', 'angry', 'excited', 'happy']
 
     if request.method == 'POST':
         api_url = 'https://icanhazdadjoke.com/'
@@ -35,25 +35,22 @@ def joke_search():
     error = None
     results = {}
     term = ''
+    search_jokes = None
 
     if request.method == 'POST':
+
         headers = {'Accept': 'application/json'}
-        api_url = 'https://icanhazdadjoke.com/search'
+        term = request.form.get('term').lower()
+        api_url = f'https://icanhazdadjoke.com/search?term={term}'
         response = requests.get(api_url, headers=headers)
 
         if response.status_code == 200:
-            print(response.json())
             results = response.json().get("results")
-            term = request.form.get('term').lower()
-
-            for joke in results:
-                for i in joke:
-                    i = results[i].get('joke')
 
         else:
             error = f"Could not find joke '{results}'. Try Another!"
 
-    return render_template('joke_search.html', results=results, error=error, term=term, i=i)
+    return render_template('joke_search.html', results=results, error=error, term=term, search_jokes=search_jokes)
 
 
 if __name__ == '__main__':
