@@ -32,16 +32,16 @@
       {% if error %}
       <p style="color: red">{{error}}</p>
       {% endif %} {% if 'happy' in mood %}
-      <img src="/static/imgs/happy moji.png" alt="" />
+      <img class="mood_img" src="/static/imgs/happy moji.png" alt="" />
       <p>I hope you stay happy after this joke!</p>
       {% endif %} {% if 'sad' in mood %}
-      <img src="/static/imgs/sad moji.png" alt="" />
+      <img class="mood_img" src="/static/imgs/sad moji.png" alt="" />
       <p>I hope you are not sad after this joke!</p>
       {% endif %} {% if 'angry' in mood %}
-      <img src="/static/imgs/angry moji.png" alt="" />
+      <img class="mood_img" src="/static/imgs/angry moji.png" alt="" />
       <p>You shouldn't be angry anymore!</p>
       {% endif %} {% if 'excited' in mood %}
-      <img src="/static/imgs/excited moji.png" alt="" />
+      <img class="mood_img" src="/static/imgs/excited moji.png" alt="" />
       <p>You should be even more excited for the dad joke!</p>
       {% endif %} {% if joke %}
       <p>{{joke}}</p>
